@@ -16,10 +16,6 @@ if (!empty($_POST)) {
          // There is no ID, so member doesn't exist in the database. Let's add them.
          try {
             // Write the SQL statement here to insert a member into the database.
-            consoleLog($first_name);
-            consoleLog($last_name);
-            consoleLog($address);
-            consoleLog($tier_id);
             $createMemberStmt = $db -> prepare('
               INSERT INTO members (first_name, last_name, address, tier_id)
               VALUES (:first_name, :last_name, :address, :tier_id);');
